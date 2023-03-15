@@ -12,16 +12,43 @@ function App() {
   const [estReturns, setEstReturns] = useState(0);
   const [totalValue, setTotalValue] = useState(0);
 
-  const handleMonthlyInvestment = (e) => {
-    setMonthlyInvestment(e.target.value);
-  };
-  const handleExpectedReturns = (e) => {
-    setExpectedReturns(e.target.value);
-  };
+  const handleInput = (e, max, setterFn) => {
+    console.log(e.target.value, "the values");
 
-  const handleTimePeriod = (e) => {
-    setTimePeriod(e.target.value);
+    if (e.target.value == "") {
+      setterFn(0);
+    } else if (e.target.value.length > 0 && e.target.value.charAt(0) == "0") {
+      setterFn(e.target.value.replace(/^0+(?=\d)/, ""));
+    } else if (e.target.value < 0) {
+      setterFn(1);
+    } else if (e.target.value > max) {
+      setterFn(max);
+    } else {
+      setterFn(e.target.value);
+    }
   };
+  // const handleMonthlyInvestment = (e) => {
+  //   console.log(e.target.value, "the values");
+
+  //   if (e.target.value == "") {
+  //     setMonthlyInvestment(0);
+  //   } else if (e.target.value.length > 0 && e.target.value.charAt(0) == "0") {
+  //     setMonthlyInvestment(e.target.value.replace(/^0+(?=\d)/, ""));
+  //   } else if (e.target.value < 0) {
+  //     setMonthlyInvestment(1);
+  //   } else if (e.target.value > 100000) {
+  //     setMonthlyInvestment(100000);
+  //   } else {
+  //     setMonthlyInvestment(e.target.value);
+  //   }
+  // };
+  // const handleExpectedReturns = (e) => {
+  //   setExpectedReturns(e.target.value);
+  // };
+
+  // const handleTimePeriod = (e) => {
+  //   setTimePeriod(e.target.value);
+  // };
 
   useEffect(() => {
     setInvestedAmount(monthlyInvestment * timePeriod * 12);
@@ -46,9 +73,10 @@ function App() {
               min={500}
               max={100000}
               currentValue={monthlyInvestment}
-              showText={`₹ ${monthlyInvestment}`}
-              onChange={handleMonthlyInvestment}
+              showText={`  ₹`}
+              onChange={handleInput}
               step={500}
+              setterFn={setMonthlyInvestment}
             />
 
             <CustomSlider
@@ -56,9 +84,10 @@ function App() {
               min={1}
               max={30}
               currentValue={expectedReturns}
-              onChange={handleExpectedReturns}
-              showText={`${expectedReturns}% `}
+              onChange={handleInput}
+              showText={`  %`}
               step={0.1}
+              setterFn={setExpectedReturns}
             />
 
             <CustomSlider
@@ -66,9 +95,10 @@ function App() {
               min={1}
               max={40}
               currentValue={timePeriod}
-              onChange={handleTimePeriod}
-              showText={`${timePeriod} Yr`}
+              onChange={handleInput}
+              showText={`yr`}
               step={1}
+              setterFn={setTimePeriod}
             />
           </div>
           <div className="output">

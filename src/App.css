@@ -132,6 +132,12 @@ input[type=range]:focus::-moz-range-track {
   border-radius: 3px; /* Set the same border-radius as the track */
 }
 
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
 
 
 .label-value {
@@ -216,4 +222,32 @@ input[type=range]:focus::-moz-range-track {
     flex-direction: column;
     justify-content: space-between;
   }
+
+
+}
+
+.input-box {
+  border: 1px solid #b1d8b7; 
+  border-radius: 5px; 
+  background-color: #333333; 
+  color: white; 
+  padding: 10px; 
+  font-size: 17px;
+  text-align: end;
+  font-weight: bold;
+  margin-right: 10px;
+  width: 200px;
+
+}
+
+.input-container {
+
+
+
+display: flex;
+align-items: center;
+width: 30%;
+
+
+
 }
