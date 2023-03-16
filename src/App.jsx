@@ -65,14 +65,22 @@ function App() {
               step={1e5}
               setterFn={setExpectedReturns}
             />
-          </div>
-          <div className="rewards-title">Your reward in USD</div>
+            <div className="border-cont">
+              <div className="rewards-title">Your reward in USD</div>
 
-          <div className="output">
-            <OutValue label="Daily" value={investedAmount} />
-            <OutValue label="Weekly" value={parseInt(investedAmount * 7)} />
-            <OutValue label="Monthly" value={parseInt(investedAmount * 30)} />
-            <OutValue label="Yearly" value={parseInt(investedAmount * 365)} />
+              <div className="output">
+                <OutValue label="Daily" value={investedAmount} />
+                <OutValue label="Weekly" value={parseInt(investedAmount * 7)} />
+                <OutValue
+                  label="Monthly"
+                  value={parseInt(investedAmount * 30)}
+                />
+                <OutValue
+                  label="Yearly"
+                  value={parseInt(investedAmount * 365)}
+                />
+              </div>
+            </div>
           </div>
         </div>
       </div>

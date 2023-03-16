@@ -14,6 +14,7 @@
   display: flex;
   justify-content:center;
   align-items: center;
+  margin-bottom: -25px;
 }
 
 .container {
@@ -36,9 +37,9 @@
   justify-content: space-between;
   /* background-color: #b1d8b7; */
   /* margin-top: 50px; */
-  border: 1px solid #b1d8b7;
+  /* border: 1px solid #b1d8b7; */
   border-radius: 9px;
-  margin-top: 10px;
+  /* margin-top: 10px; */
   padding: 20px;
 
 }
@@ -150,7 +151,8 @@ input[type=number]::-webkit-outer-spin-button {
   font-size: 16px;
   display: flex;
   justify-content: space-between;
-  /* flex-direction: column; */
+
+
 
 
 }
@@ -158,8 +160,12 @@ input[type=number]::-webkit-outer-spin-button {
 .slider-container {
 
   width: 100%;
-  height: 100px;
-  margin-top: 50px;
+  /* height: 100px; */
+  margin-top: 20px;
+  border: 1px solid #b1d8b7;
+  padding: 20px;
+  border-radius: 10px  ;
+  align-self: center;
   /* margin-bottom: 100px; */
 }
 
@@ -167,14 +173,26 @@ input[type=number]::-webkit-outer-spin-button {
 
   width: 70%;
   height: 50px;
-  margin-top: 20px;
-  margin-bottom: 30px;
+  margin-top: 10px;
+  margin-bottom: 20px;
   color: #333333;
   font-family: monospace;
   font-size: 15px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+ 
+}
+.border-cont {
+
+  width: 100%;
+  /* height: 100px; */
+  margin-top: 20px;
+  border: 1px solid #b1d8b7;
+  padding: 20px;
+  border-radius: 10px  ;
+  align-self: center;
+  /* margin-bottom: 100px; */
 }
 .output {
   width: 100%;
@@ -190,10 +208,7 @@ input[type=number]::-webkit-outer-spin-button {
   font-size: 22px;
 }
 @media only screen and (max-width: 600px) {
-  .calc-amount {
-    font-weight: bold;
-    font-size: 17px;
-  }
+ 
   .output-container {
 
     width: 70%;
@@ -207,13 +222,12 @@ input[type=number]::-webkit-outer-spin-button {
     flex-direction: column;
     justify-content: space-between;
   }
+
+
 }
 
 @media only screen and (max-width: 400px) {
-  .calc-amount {
-    font-weight: bold;
-    font-size: 14px;
-  }
+
   .output-container {
 
     width: 70%;
@@ -227,6 +241,7 @@ input[type=number]::-webkit-outer-spin-button {
     flex-direction: column;
     justify-content: space-between;
   }
+ 
 
 
 }
@@ -246,16 +261,109 @@ input[type=number]::-webkit-outer-spin-button {
 
 }
 
+@media (max-width: 768px) { 
+
+
+  .label-value {
+
+    color: #333333;
+    font-family: monospace;
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  
+  
+  }
+  .calc-amount {
+    font-weight: bold;
+    font-size: 13px;
+  }
+  .input-box {
+    /* font-size: 14px;
+    padding: 5px;
+    width: 150px;
+    margin-bottom: 10px; */
+
+
+    border: 1px solid #b1d8b7; 
+    border-radius: 5px; 
+    background-color: #333333; 
+    color: #b1d8b7; 
+    padding: 7px; 
+    font-size: 14px;
+    text-align: end;
+    font-weight: bold;
+    margin-right: 10px;
+    width: 160px;
+    margin-bottom: 15px;
+    margin-top: 10px;
+  }
+
+}
+
+@media (max-width: 480px) {
+  .calc-amount {
+    font-weight: bold;
+    font-size: 15px;
+  }
+  .label-value {
+
+    color: #333333;
+    font-family: monospace;
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  
+  
+  }
+
+  .input-box {
+    /* font-size: 14px;
+    padding: 5px;
+    width: 150px;
+    margin-bottom: 10px; */
+  
+
+    border: 1px solid #b1d8b7; 
+    border-radius: 5px; 
+    background-color: #333333; 
+    color: #b1d8b7; 
+    padding: 7px; 
+    font-size: 14px;
+    text-align: end;
+    font-weight: bold;
+    margin-right: 10px;
+    width: 160px;
+    margin-bottom: 15px;
+    margin-top: 10px;
+  }
+}
+
 .input-container {
 
 
 
-  display: flex;
-  flex-wrap: wrap; /* allow the container to wrap to the next line if necessary */
-  align-items: center;
-  width: 100%; /* set the width to 100% to make it adapt to the parent container */
-  margin-bottom: 5px;
-  justify-content: space-between;
+
+
+
+
+    display: flex;
+  
+    align-items: center;
+    width: 30%;
+    margin-bottom: 5px;
+    justify-content: space-between;
+ 
+    /* flex-wrap: wrap; */
+    
+    
+    
+    
+    
+    
+
 
 
 
@@ -267,7 +375,7 @@ input[type=number]::-webkit-outer-spin-button {
   font-family: monospace;
   font-size: 17px;
   font-weight: bold;
-  margin-top: 60px;
+  margin-top: 15px;
   color: #333333;
 }
 
