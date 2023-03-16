@@ -37,11 +37,7 @@ function App() {
     <>
       <div className="header">
         {/* //image */}
-        <img
-          src={"/public/dog.png"}
-          style={{ width: 80, height: 80 }}
-          alt="My Image"
-        />
+        <img src={"dog.png"} style={{ width: 80, height: 80 }} alt="My Image" />
         <div style={{ marginLeft: 40 }}>SHARBI REWARDS CALCULATOR</div>
       </div>
       <div className="container">
