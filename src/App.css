@@ -458,7 +458,9 @@ input[type=number]::-webkit-outer-spin-button {
   font-weight: bold;
   /* margin-top: 30px; */
   color: #333333;
-  align-self: center
+  align-self: center;
+  margin-right: 5px;
+  
 }
 
 

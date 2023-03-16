@@ -11,6 +11,7 @@ const CustomSlider = (props) => {
     showText,
     setterFn,
     textAlign,
+    tax,
   } = props;
 
   function convertAmount(amount) {
@@ -42,10 +43,33 @@ const CustomSlider = (props) => {
               max={10000}
               step={1}
             />
-            <div className="amount-short-title">
-              {" "}
-              {convertAmount(currentValue)}{" "}
-            </div>
+
+            {tax ? (
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                }}
+              >
+                <div className="amount-short-title">
+                  {" "}
+                  {convertAmount(currentValue)}{" "}
+                </div>
+                <div
+                  style={{
+                    fontSize: 13,
+                    fontFamily: "monospace",
+                  }}
+                >
+                  (4% TAX =${currentValue * 0.04})
+                </div>
+              </div>
+            ) : (
+              <div className="amount-short-title">
+                {" "}
+                {convertAmount(currentValue)}{" "}
+              </div>
+            )}
           </div>
 
           <div

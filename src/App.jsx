@@ -6,7 +6,7 @@ import OutValue from "./comps/OutValue";
 
 function App() {
   const [monthlyInvestment, setMonthlyInvestment] = useState(4000000000);
-  const [expectedReturns, setExpectedReturns] = useState(50000000);
+  const [expectedReturns, setExpectedReturns] = useState(5000000);
   const [timePeriod, setTimePeriod] = useState(10);
   const [investedAmount, setInvestedAmount] = useState(0);
   const [estReturns, setEstReturns] = useState(0);
@@ -56,14 +56,15 @@ function App() {
 
             <CustomSlider
               label={"Expected daily volume"}
-              min={1e5}
-              max={5e8}
+              min={50000}
+              max={20000000}
               currentValue={expectedReturns}
               onChange={handleInput}
               showText={"$    "}
               textAlign={true}
-              step={1e5}
+              step={10000}
               setterFn={setExpectedReturns}
+              tax={true}
             />
             <div className="border-cont">
               <div className="rewards-title">Your reward in USD</div>
