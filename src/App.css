@@ -275,6 +275,27 @@ input[type=number]::-webkit-outer-spin-button {
   
   
   }
+  .output {
+    width: 100%;
+    display: flex;
+    /* margin-left: 50%; */
+    
+    flex-direction: column;
+    align-self: center;
+  }
+  .output-container {
+
+    width: 70%;
+    height: 50px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color:  #333333;
+    font-family: monospace;
+    font-size: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
   .calc-amount {
     font-weight: bold;
     font-size: 13px;
@@ -306,6 +327,27 @@ input[type=number]::-webkit-outer-spin-button {
   .calc-amount {
     font-weight: bold;
     font-size: 15px;
+  }
+  .output {
+    width: 100%;
+    display: flex;
+    /* margin-left: 50%; */
+    
+    flex-direction: column;
+    align-self: center;
+  }
+  .output-container {
+
+    width: 70%;
+    height: 50px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color:  #333333;
+    font-family: monospace;
+    font-size: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
   .label-value {
 
