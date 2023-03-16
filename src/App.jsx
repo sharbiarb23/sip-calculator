@@ -36,8 +36,9 @@ function App() {
   return (
     <>
       <div className="header">
+        {/* //image */}
         <img
-          src={"./public/dog.png"}
+          src={"/public/dog.png"}
           style={{ width: 80, height: 80 }}
           alt="My Image"
         />
