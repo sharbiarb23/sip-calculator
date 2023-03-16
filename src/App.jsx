@@ -5,8 +5,8 @@ import CustomSlider from "./comps/CustomSlider";
 import OutValue from "./comps/OutValue";
 
 function App() {
-  const [monthlyInvestment, setMonthlyInvestment] = useState(25000);
-  const [expectedReturns, setExpectedReturns] = useState(12);
+  const [monthlyInvestment, setMonthlyInvestment] = useState(4000000000);
+  const [expectedReturns, setExpectedReturns] = useState(50000000);
   const [timePeriod, setTimePeriod] = useState(10);
   const [investedAmount, setInvestedAmount] = useState(0);
   const [estReturns, setEstReturns] = useState(0);
@@ -51,16 +51,17 @@ function App() {
   // };
 
   useEffect(() => {
-    setInvestedAmount(monthlyInvestment * timePeriod * 12);
-    setEstReturns(
-      monthlyInvestment * timePeriod * 12 * (expectedReturns / 100)
-    );
+    let tax = expectedReturns * 0.04;
+    setInvestedAmount(tax * (monthlyInvestment / 1000000000000));
+    // setEstReturns(
+    //   monthlyInvestment * timePeriod * 12 * (expectedReturns / 100)
+    // );
 
-    let totalAmount =
-      monthlyInvestment * timePeriod * 12 +
-      monthlyInvestment * timePeriod * 12 * (expectedReturns / 100);
-    setTotalValue(totalAmount);
-  }, [monthlyInvestment, timePeriod, expectedReturns]);
+    // let totalAmount =
+    //   monthlyInvestment * timePeriod * 12 +
+    //   monthlyInvestment * timePeriod * 12 * (expectedReturns / 100);
+    // setTotalValue(totalAmount);
+  }, [monthlyInvestment, expectedReturns]);
 
   return (
     <>
@@ -69,28 +70,28 @@ function App() {
         <div className="calc-container">
           <div>
             <CustomSlider
-              label={"Monthly Investment"}
-              min={500}
-              max={100000}
+              label={"Your Holdings"}
+              min={100000}
+              max={20000000000}
               currentValue={monthlyInvestment}
-              showText={`  ₹`}
+              showText={`  $`}
               onChange={handleInput}
-              step={500}
+              step={100000}
               setterFn={setMonthlyInvestment}
             />
 
             <CustomSlider
-              label={"Expected return rate (p.a)"}
-              min={1}
-              max={30}
+              label={"Expected daily volume"}
+              min={50000}
+              max={500000000}
               currentValue={expectedReturns}
               onChange={handleInput}
-              showText={`  %`}
-              step={0.1}
+              showText={`  $`}
+              step={50000}
               setterFn={setExpectedReturns}
             />
 
-            <CustomSlider
+            {/* <CustomSlider
               label={"Time Period"}
               min={1}
               max={40}
@@ -99,12 +100,15 @@ function App() {
               showText={`yr`}
               step={1}
               setterFn={setTimePeriod}
-            />
+            /> */}
           </div>
           <div className="output">
-            <OutValue label="Invested Amount" value={investedAmount} />
-            <OutValue label="Est returns" value={parseInt(estReturns)} />
-            <OutValue label="Total Value" value={totalValue} />
+            <OutValue
+              label="Your daily reward in USDC"
+              value={investedAmount}
+            />
+            {/* <OutValue label="Est returns" value={parseInt(estReturns)} />
+            <OutValue label="Total Value" value={totalValue} /> */}
           </div>
         </div>
       </div>

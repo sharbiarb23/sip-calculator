@@ -20,7 +20,9 @@ const CustomSlider = (props) => {
             max={10000}
             step={1}
           />
-          <div style={{ fontWeight: "bold", fontSize: 18 }}>{showText}</div>
+          <div style={{ fontWeight: "bold", fontSize: 20, color: "#808080" }}>
+            {showText}
+          </div>
         </div>
       </div>
       <input
