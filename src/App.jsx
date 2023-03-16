@@ -56,13 +56,13 @@ function App() {
 
             <CustomSlider
               label={"Expected daily volume"}
-              min={50000}
-              max={500000000}
+              min={1e5}
+              max={5e8}
               currentValue={expectedReturns}
               onChange={handleInput}
               showText={"$    "}
               textAlign={true}
-              step={50000}
+              step={1e5}
               setterFn={setExpectedReturns}
             />
           </div>

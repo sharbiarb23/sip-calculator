@@ -200,7 +200,7 @@ input[type=number]::-webkit-outer-spin-button {
     height: 50px;
     margin-top: 50px;
     margin-bottom: 60px;
-    color: #b1d8b7;
+    color:  #333333;
     font-family: monospace;
     font-size: 16px;
     display: flex;
@@ -220,7 +220,7 @@ input[type=number]::-webkit-outer-spin-button {
     height: 50px;
     margin-top: 50px;
     margin-bottom: 60px;
-    color: #b1d8b7;
+    color:  #333333;
     font-family: monospace;
     font-size: 8px;
     display: flex;
@@ -250,12 +250,12 @@ input[type=number]::-webkit-outer-spin-button {
 
 
 
-display: flex;
-align-items: center;
-width: 30%;
-margin-bottom: 5px;
-justify-content: space-between
-
+  display: flex;
+  flex-wrap: wrap; /* allow the container to wrap to the next line if necessary */
+  align-items: center;
+  width: 100%; /* set the width to 100% to make it adapt to the parent container */
+  margin-bottom: 5px;
+  justify-content: space-between;
 
 
 
