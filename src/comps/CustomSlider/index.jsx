@@ -49,9 +49,9 @@ const CustomSlider = (props) => {
                 style={{
                   display: "flex",
                   flexDirection: "row",
-                  justifyContent: "center",
+                  justifyContent: "space-between",
                   alignItems: "center",
-                  width: 213,
+                  width: 240,
                 }}
               >
                 <div className="amount-short-title">
@@ -60,11 +60,12 @@ const CustomSlider = (props) => {
                 </div>
                 <div
                   style={{
-                    fontSize: 13,
+                    fontSize: 11,
                     fontFamily: "monospace",
+                    fontWeight: "bold",
                   }}
                 >
-                  (4% TAX = ${currentValue * 0.04})
+                  (4% USDC Rewards= ${currentValue * 0.04})
                 </div>
               </div>
             ) : (
