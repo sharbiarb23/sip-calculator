@@ -12,7 +12,16 @@ const CustomSlider = (props) => {
     setterFn,
     textAlign,
     tax,
+    dropDown,
   } = props;
+
+  const [selectedItem, setSelectedItem] = useState();
+
+  const handleItemChange = (event) => {
+    setSelectedItem(event.target.value);
+  };
+
+  const coins = ["shiba-inu", "floki", "baby-doge-coin"];
 
   function convertAmount(amount) {
     if (amount >= 1000000000) {
@@ -29,7 +38,36 @@ const CustomSlider = (props) => {
   return (
     <div className="slider-container">
       <div className="label-value">
-        {label}{" "}
+        {label}
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+          }}
+        >
+          {dropDown && (
+            <select
+              className="exchange-drop-down"
+              value={selectedItem}
+              onChange={handleItemChange}
+            >
+              <option
+                value=""
+                disabled
+                selected={true}
+                className="drop-placeholder"
+              >
+                Competitor daily volume
+              </option>
+              {coins.map((item) => (
+                <option key={item} value={item}>
+                  {item}
+                </option>
+              ))}
+            </select>
+          )}
+        </div>
+
         <div className="input-container">
           <div style={{ display: "flex", flexDirection: "column" }}>
             <input
@@ -65,7 +103,7 @@ const CustomSlider = (props) => {
                     fontWeight: "bold",
                   }}
                 >
-                  (4% USDC Rewards= ${currentValue * 0.04})
+                  (USDC Rewards= ${currentValue * 0.04})
                 </div>
               </div>
             ) : (

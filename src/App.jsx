@@ -28,9 +28,41 @@ function App() {
     }
   };
 
+  const getDEXVolume = (coin) => {
+    const dex_exchanges = [
+      "Uniswap (v3)",
+      "Uniswap (v2)",
+      "Shibaswap",
+      "Dex-Trade",
+      "PancakeSwap (v2)",
+      "BabyDogeSwap",
+      "Uniswap (Arbitrum One)",
+      "Quickswap (v3)",
+      "Sushiswap (Arbitrum One)",
+      "Camelot",
+      "Sushiswap",
+      "Balancer (v2)",
+    ]; // Replace with your desired DEX exchanges
+
+    const url = `https://api.coingecko.com/api/v3/coins/${coin}/tickers`;
+
+    fetch(url)
+      .then((response) => response.json())
+      .then((data) => {
+        let tickers = data.tickers;
+        const dex_tickers = tickers.filter((ticker) =>
+          dex_exchanges.includes(ticker.market.name)
+        );
+
+        console.log(dex_tickers, "dex -tickers");
+      })
+      .catch((error) => console.error(error));
+  };
+
   useEffect(() => {
     let tax = expectedReturns * 0.04;
     setInvestedAmount(tax * (monthlyInvestment / 1000000000000));
+    getDEXVolume("floki");
   }, [monthlyInvestment, expectedReturns]);
 
   return (
@@ -53,9 +85,8 @@ function App() {
               step={100000}
               setterFn={setMonthlyInvestment}
             />
-
             <CustomSlider
-              label={"Expected daily volume"}
+              label={"Expected Daily Volume Per Chain"}
               min={50000}
               max={20000000}
               currentValue={expectedReturns}
@@ -65,10 +96,11 @@ function App() {
               step={10000}
               setterFn={setExpectedReturns}
               tax={true}
+              dropDown={true}
+              getDEXVolume={getDEXVolume}
             />
             <div className="border-cont">
               <div className="rewards-title">Your reward in USD</div>
-
               <div className="output">
                 <OutValue label="Daily" value={investedAmount} />
                 <OutValue label="Weekly" value={parseInt(investedAmount * 7)} />
@@ -80,6 +112,9 @@ function App() {
                   label="Yearly"
                   value={parseInt(investedAmount * 365)}
                 />
+              </div>
+              <div className="side-note">
+                The above calculation is for single chain
               </div>
             </div>
           </div>

@@ -243,7 +243,18 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 @media only screen and (max-width: 400px) {
+  .exchange-drop-down{
 
+    width: 100px;
+    height: 30%;
+    font-family: monospace;
+    background-color: #333333;
+    font-size: 10;
+    color: #b1d8b7;
+    border-radius: 3;
+    
+    
+    }
   .output-container {
 
     width: 70%;
@@ -278,7 +289,18 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 @media (max-width: 768px) { 
+  .exchange-drop-down{
 
+    width: 100px;
+    height: 30%;
+    font-family: monospace;
+    background-color: #333333;
+    font-size: 10;
+    color: #b1d8b7;
+    border-radius: 3;
+    
+    
+    }
 
   .label-value {
 
@@ -345,6 +367,16 @@ input[type=number]::-webkit-outer-spin-button {
     margin-bottom: 15px;
     margin-top: 10px;
   }
+  .side-note {
+
+    color: #333333;
+    font-size: 10px;
+    font-family: monospace;
+    text-align: left;
+    align-self: flex-start;
+    /* margin-left: 16px; */
+   
+   }
 
 }
 
@@ -353,6 +385,18 @@ input[type=number]::-webkit-outer-spin-button {
     font-weight: bold;
     font-size: 15px;
   }
+  .exchange-drop-down{
+
+    width: 60%;
+    height: 30%;
+    font-family: monospace;
+    background-color: #333333;
+    font-size: 10;
+    color: #b1d8b7;
+    border-radius: 3;
+    
+    
+    }
   .output {
     width: 100%;
     display: grid;
@@ -406,6 +450,17 @@ input[type=number]::-webkit-outer-spin-button {
     margin-bottom: 15px;
     margin-top: 10px;
   }
+  .side-note {
+
+    color: #333333;
+    font-size: 10px;
+    font-family: monospace;
+    text-align: left;
+    align-self: flex-start;
+    margin-top: 5;
+    /* margin-left: 16px; */
+   
+   }
 }
 
 .input-container {
@@ -472,4 +527,45 @@ justify-content: center;
 align-items: center;
 
 
+}
+
+
+.side-note {
+
+ color: #333333;
+ font-size: 13px;
+ font-family: monospace;
+ text-align: left;
+ align-self: flex-start;
+ /* margin-left: 16px; */
+
+}
+
+.exchange-drop-down{
+
+width: 100%;
+height: 30%;
+font-family: monospace;
+background-color: #333333;
+font-size: 6;
+color: #b1d8b7;
+border-radius: 3;
+
+
+}
+
+.drop-placeholder {
+
+  font-size: 10;
+  color: #b1d8b7;
+
+
+}
+
+
+@media screen and (max-width: 768px) {
+  .exchange-drop-down {
+    width: 50%;
+    margin-top: 10px;
+  }
 }
