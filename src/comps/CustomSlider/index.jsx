@@ -81,7 +81,7 @@ const CustomSlider = (props) => {
               fontWeight: "bold",
               height: 50,
               fontSize: 15,
-              color: "#333333",
+              color: "#ffffff",
               marginRight: textAlign ? 30 : 0,
             }}
           >
